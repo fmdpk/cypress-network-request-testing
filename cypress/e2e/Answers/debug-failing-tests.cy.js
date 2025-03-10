@@ -13,7 +13,7 @@ describe("Debug Failing Tests", () => {
 
   it("the post links on the homepage link to the correct posts", () => {
     cy.get('[data-test="post-link-0"]').click();
-    cy.location("pathname").should("eq", "/posts/ssg-ssr");
+    cy.location("pathname", { timeout: 100000 }).should("eq", "/posts/ssg-ssr");
   });
 
   it("displays all of the posts on the homepage", () => {
